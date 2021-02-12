@@ -2,15 +2,6 @@
 
 var doneStuff;
 
-window.onload = function() {
-  
-  if(doneStuff == true){
-    doneStuff = true;
-    let cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    console.log("ok");
-  }
-};
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -19,6 +10,16 @@ window.addEventListener('DOMContentLoaded', () => {
   fetch("https://fakestoreapi.com/products")
   .then(response => response.json())
   .then(data => {
+
+
+    if(doneStuff == true){
+      doneStuff = true;
+      let cart = [];
+      localStorage.setItem("cart", JSON.stringify(cart));
+      console.log("ok");
+    }
+
+
       localStorage.setItem("list", JSON.stringify(data));
       
       var daList = JSON.parse(localStorage.getItem('list'));
@@ -39,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         
 
-        if(cartList != null || cartList.includes(toPut.shadowRoot.querySelector('img').src)) {
+        if(cartList != null && cartList.includes(toPut.shadowRoot.querySelector('img').src)) {
           toPut.shadowRoot.querySelector('button').textContent = 'Remove from Cart';
           document.getElementById('cart-count').innerText = parseInt(document.getElementById('cart-count').innerText) + 1;
         }
