@@ -1,9 +1,15 @@
 // Script.js
 
+var doneStuff;
+
 window.onload = function() {
-  let cart = [];
-  localStorage.setItem("cart", JSON.stringify(cart));
-  console.log("ok");
+  
+  if(doneStuff == true){
+    doneStuff = true;
+    let cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    
+  }
 };
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -31,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let cartList = JSON.parse(localStorage.getItem("cart"));
 
-        console.log(cartList)
+        
 
         if(cartList.includes(toPut.shadowRoot.querySelector('img').src)) {
           toPut.shadowRoot.querySelector('button').textContent = 'Remove from Cart';
