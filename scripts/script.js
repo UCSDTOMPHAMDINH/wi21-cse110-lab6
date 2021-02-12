@@ -1,16 +1,6 @@
 // Script.js
 
 
-window.onload = function(){
-  var doneStuff;
-  if(doneStuff != true){
-    doneStuff = true;
-    let cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    console.log("ok");
-  }
-
-};
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -27,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem("list", JSON.stringify(data));
       
       var daList = JSON.parse(localStorage.getItem('list'));
+      var cart = [];
       
       
 
@@ -56,9 +47,16 @@ window.addEventListener('DOMContentLoaded', () => {
           if(toPut.shadowRoot.querySelector('button').textContent == 'Add to Cart') {
             document.getElementById('cart-count').innerText = parseInt(document.getElementById('cart-count').innerText) + 1;
             toPut.shadowRoot.querySelector('button').textContent = 'Remove from Cart';
+
+            if(cartList == null) {
+              cart.push(toPut.shadowRoot.querySelector('img').src);
+              localStorage.setItem("cart", JSON.stringify(cart));
+            }
+            else{
             let a = JSON.parse(localStorage.getItem("cart"));
             a.push(toPut.shadowRoot.querySelector('img').src);
             localStorage.setItem("cart", JSON.stringify(a));
+            }
             
         }
 
