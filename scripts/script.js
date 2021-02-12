@@ -1,7 +1,15 @@
 // Script.js
 
 var doneStuff;
+window.onload = function() {
+  if(doneStuff != true){
+    doneStuff = true;
+    let cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log("ok");
+  }
 
+}
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -12,12 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
   .then(data => {
 
 
-    if(doneStuff != true){
-      doneStuff = true;
-      let cart = [];
-      localStorage.setItem("cart", JSON.stringify(cart));
-      console.log("ok");
-    }
+    
 
 
       localStorage.setItem("list", JSON.stringify(data));
