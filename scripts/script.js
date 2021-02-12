@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   .then(data => {
 
 
-    if(doneStuff == true){
+    if(doneStuff != true){
       doneStuff = true;
       let cart = [];
       localStorage.setItem("cart", JSON.stringify(cart));
