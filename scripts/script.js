@@ -1,7 +1,7 @@
 // Script.js
 
 
-window.onload = function() {
+window.onload = function(){
   var doneStuff;
   if(doneStuff != true){
     doneStuff = true;
@@ -10,7 +10,7 @@ window.onload = function() {
     console.log("ok");
   }
 
-}
+};
 
 window.addEventListener('DOMContentLoaded', () => {
 
