@@ -1,7 +1,8 @@
 // Script.js
 
-var doneStuff;
+
 window.onload = function() {
+  var doneStuff;
   if(doneStuff != true){
     doneStuff = true;
     let cart = [];
