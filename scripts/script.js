@@ -1,6 +1,10 @@
 // Script.js
 
-
+window.onload = function() {
+  let cart = [];
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log("ok");
+};
 
 window.addEventListener('DOMContentLoaded', () => {
 
