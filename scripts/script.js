@@ -8,7 +8,7 @@ window.onload = function() {
     doneStuff = true;
     let cart = [];
     localStorage.setItem("cart", JSON.stringify(cart));
-    
+    console.log("ok");
   }
 };
 
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         
 
-        if(cartList.includes(toPut.shadowRoot.querySelector('img').src)) {
+        if(cartList != null || cartList.includes(toPut.shadowRoot.querySelector('img').src)) {
           toPut.shadowRoot.querySelector('button').textContent = 'Remove from Cart';
           document.getElementById('cart-count').innerText = parseInt(document.getElementById('cart-count').innerText) + 1;
         }
