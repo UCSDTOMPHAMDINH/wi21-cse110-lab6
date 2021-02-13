@@ -24,12 +24,14 @@ window.addEventListener('DOMContentLoaded', () => {
       for(var i = 0; i < daList.length; i++) {
         let toPut = document.createElement('product-item');
         let current = daList[i];
+
+        
         
         toPut.shadowRoot.querySelector('img').src = current.image;
         toPut.shadowRoot.querySelector('img').alt = current.description;
 
         toPut.shadowRoot.querySelector('p').textContent = current.title;
-        toPut.shadowRoot.querySelector('p.price').textContent = current.price
+        toPut.shadowRoot.querySelector('p.price').textContent = '$' + current.price
 
         let cartList = JSON.parse(localStorage.getItem("cart"));
 
