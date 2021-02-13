@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
         toPut.shadowRoot.querySelector('img').alt = current.description;
 
         toPut.shadowRoot.querySelector('p').textContent = current.title;
-        toPut.shadowRoot.querySelector('p.price').textContent = '$' + current.price
+        toPut.shadowRoot.querySelector('p.price').textContent = '$' + current.price;
 
         let cartList = JSON.parse(localStorage.getItem("cart"));
 
